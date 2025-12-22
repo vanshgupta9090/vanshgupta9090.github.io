@@ -17,6 +17,7 @@ body{
     padding: 10px 3%;
     justify-content: space-between;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .searchbar{
@@ -65,6 +66,7 @@ body{
     display: flex;
     justify-content: center;
     gap: 20px;
+    cursor: pointer;
 }
 .categ-card{
     flex: 1;
@@ -94,6 +96,7 @@ body{
     margin-left: 15px;
     background-color: white;
     height: 320px;
+    cursor: pointer;
 }
 .deals{
     display: flex;
@@ -137,6 +140,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 10px;
+    cursor: pointer;
 }
 .product{
     display: grid;
