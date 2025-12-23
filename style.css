@@ -19,6 +19,10 @@ body{
     white-space: nowrap;
     cursor: pointer;
 }
+.icn-btn:hover{
+      transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
 
 .searchbar{
     background-color: #f0f5ff;
@@ -68,6 +72,10 @@ body{
     gap: 20px;
     cursor: pointer;
 }
+.categ-card:hover{
+      transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
 .categ-card{
     flex: 1;
     height: auto;
@@ -98,6 +106,9 @@ body{
     height: 320px;
     cursor: pointer;
 }
+.cont a:hover{
+    color: #7e776b;
+}
 .deals{
     display: flex;
     gap: 20px;
@@ -115,6 +126,11 @@ body{
     background: #fff;
     text-align: center;
     flex-shrink: 0;
+}
+
+.deals-image :hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
 .deals-image img{
     width: 100%;
@@ -358,6 +374,98 @@ body{
 }
 .dividerimg img{
     width: 100%;
-    height: auto;
+    height: 200px;
     object-fit: contain;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+
+/* TABLET VIEW (Screens smaller than 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        gap: 15px;
+    }
+    
+    .searchbar input {
+        width: 100%; /* Removes the need for size="55" */
+    }
+
+    .categories {
+        padding: 10px 2%;
+        gap: 10px;
+        overflow-x: auto; /* Allow scrolling if categories don't fit */
+        justify-content: flex-start;
+    }
+
+    .product {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    }
+
+    .blue {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for the blue grid */
+    }
+}
+
+/* MOBILE VIEW (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Wraps search bar to second line if needed */
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 24px;
+    }
+
+    .searchbar {
+        order: 3; /* Moves search bar below logo and links */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .links span {
+        display: none; /* Hide text, show only icons for Login/Cart */
+    }
+
+    .categories .categ-card img {
+        height: 50px; /* Smaller icons */
+    }
+
+    .product {
+        grid-template-columns: 1fr; /* 1 column (Stacked) */
+        padding-right: 15px;
+    }
+
+    .status {
+        grid-template-columns: repeat(2, 1fr); /* Keep items 2-by-2 inside the cards */
+    }
+
+    .boxer {
+        text-align: center;
+    }
+
+    .boxertext {
+        padding: 20px 0;
+    }
+
+    .boxerimg img {
+        width: 80px; /* Scale down the furniture images */
+        height: 120px;
+    }
+
+    .blue {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* SMALL MOBILE (Screens smaller than 480px) */
+@media (max-width: 480px) {
+    .status {
+        grid-template-columns: 1fr; /* Stack everything in a single list */
+    }
+    
+    .banner img {
+        margin: 10px 0;
+        border-radius: 0;
+    }
 }
