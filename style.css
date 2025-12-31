@@ -7,6 +7,11 @@ body{
     font-family: Roboto, Arial, sans-serif;
     letter-spacing: 0;
 }
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
 .navbar{
     flex:1;
     display: flex;
@@ -44,6 +49,7 @@ body{
     /* justify-content: center; */
     /* align-items: center; */
 }
+.searchbar svg{flex: 0 0 auto}
 .links{
     flex: 1;
     display: flex;
@@ -103,6 +109,7 @@ body{
     width: 100%;
     margin: 15px ;
 }
+.banner, .categories, .cont, .blue, .product, .divu{background: transparent}
 .cont{
     margin-left: 15px;
     background-color: white;
@@ -156,8 +163,8 @@ body{
     /* flex: 1; */
     display: grid;
     margin: 15px;
-    grid-template-columns: 1fr 1fr 1fr ; 
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(80px, auto);
     column-gap: 10px;
     cursor: pointer;
 }
@@ -381,3 +388,66 @@ body{
     object-fit: contain;
 }
 
+/* Make images responsive globally */
+img{max-width:100%;height:auto;display:block}
+
+/* Responsive typography tweaks */
+h1{font-size: clamp(20px, 4vw, 34px)}
+h3{font-size: clamp(18px, 3vw, 24px)}
+
+@media (max-width: 768px){
+
+  .navbar{
+    flex-wrap: wrap;
+  }
+
+  .searchbar{
+    width: 100%;
+  }
+
+  .links{
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .links a span{
+    display: none;
+  }
+
+  .categories{
+    overflow-x: auto;
+    justify-content: flex-start;
+    margin: 8px;
+    padding: 10px;
+  }
+
+  .categ-card{
+    min-width: 90px;
+  }
+
+  .product{
+    grid-template-columns: 1fr;
+  }
+
+  .status{
+    grid-template-columns: 1fr;
+  }
+
+  .blue{
+    grid-template-columns: repeat(2, 1fr);
+    margin: 8px;
+  }
+
+  .banner img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .cont,
+  .divu{
+    margin: 8px;
+  }
+
+}
